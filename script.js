@@ -68,3 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  function createFire() {
+    const fire = document.createElement("div");
+    fire.innerHTML = "🔥";
+    fire.classList.add("fire");
+
+    // Random position within the screen width
+    fire.style.left = Math.random() * window.innerWidth + "px";
+    fire.style.bottom = "0px";
+
+    document.body.appendChild(fire);
+
+    // Remove fire after animation ends
+    setTimeout(() => {
+        fire.remove();
+    }, 3000);
+}
+
+// Generate fire every 5 seconds
+setInterval(createFire, 5000);
